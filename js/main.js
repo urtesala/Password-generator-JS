@@ -3,7 +3,7 @@ console.log("main.js");
 
 // DOM elements
 const resultEl = document.getElementById("result");
-const lengthEl = document.getElementById("length");
+const lengthEl = document.getElementById("demo");
 const uppercaseEl = document.getElementById("uppercase");
 const lowercaseEl = document.getElementById("lowercase");
 const numbersEl = document.getElementById("numbers");
@@ -21,7 +21,7 @@ const randomFunc = {
 // Event listeners
 
 generateEl.addEventListener("click", () => {
-  const length = +lengthEl.value;
+  const length = +slider.value;
   const hasLower = lowercaseEl.checked;
   const hasUpper = uppercaseEl.checked;
   const hasNumber = numbersEl.checked;
@@ -107,3 +107,13 @@ function getRandomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 //console.log("getRandomSymbol() ===", getRandomSymbol());
+
+// range button value and other fun things
+
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function () {
+  output.innerHTML = this.value;
+};
