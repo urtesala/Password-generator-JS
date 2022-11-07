@@ -47,8 +47,7 @@ clipboardEl.addEventListener("click", () => {
   textarea.value = password;
   document.body.appendChild(textarea);
   textarea.select();
-  //   document.execCommand("copy");
-  navigator.clipboard.writeText("text to be copied");
+  document.execCommand("copy");
   textarea.remove();
   alert("Password copied to clipboard");
 });
